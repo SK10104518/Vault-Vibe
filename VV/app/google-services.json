@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "83931928357",
+    "project_id": "vvapp-84859",
+    "storage_bucket": "vvapp-84859.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83931928357:android:2e3b8fbc7afeb1cfd16ccc",
+        "android_client_info": {
+          "package_name": "com.example.vv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjTRSFHZ1pppnsMlxN7AG7__WjEzARiFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

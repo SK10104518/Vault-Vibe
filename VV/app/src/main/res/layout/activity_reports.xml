@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".ui.ReportsActivity">
+
+        <TextView
+            android:id="@+id/tvReportTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expense Reports"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"/>
+
+        <TextView
+            android:id="@+id/tvStartDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Date:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReportTitle"
+            android:layout_marginTop="32dp"/>
+
+        <TextView
+            android:id="@+id/tvSelectedStartDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Select Start Date"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/tvStartDateLabel"
+            app:layout_constraintEnd_toStartOf="@+id/btnPickStartDate"
+            app:layout_constraintTop_toTopOf="@+id/tvStartDateLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStartDateLabel"
+            android:layout_marginStart="8dp"/>
+
+        <Button
+            android:id="@+id/btnPickStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReportTitle"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvEndDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Date:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPickStartDate"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvSelectedEndDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Select End Date"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/tvEndDateLabel"
+            app:layout_constraintEnd_toStartOf="@+id/btnPickEndDate"
+            app:layout_constraintTop_toTopOf="@+id/tvEndDateLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvEndDateLabel"
+            android:layout_marginStart="8dp"/>
+
+        <Button
+            android:id="@+id/btnPickEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPickStartDate"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnApplyFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply Filter"
+            app:layout_constraintTop_toBottomOf="@+id/btnPickEndDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvFilteredExpensesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expenses in Selected Period:"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnApplyFilter"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFilteredExpenses"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFilteredExpensesTitle"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/list_item_expense"/>
+
+        <TextView
+            android:id="@+id/tvCategorySpendingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spending by Category:"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvFilteredExpenses"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategorySpending"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategorySpendingTitle"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/list_item_category_spending"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
